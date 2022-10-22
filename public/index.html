@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    alert("Haii")
+    alert("Makasih brok udh pencettt")
+</script>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="http://444.com.tr/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="http://444.com.tr/css/style.css" media="screen">
+    <link rel="stylesheet" href="http://444.com.tr/css/normalize.css" media="screen">
+    <link rel="stylesheet" href="http://444.com.tr/css/font-awesome.min.css" media="screen">
+    <link rel="stylesheet" href="http://444.com.tr/css/media.css" media="screen">
+
+    <link rel="icon" href="https://fathaulmarantz.blogspot.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Aul Goblog</title>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+        .text {
+            fill: none;
+            stroke-width: 6;
+            stroke-linejoin: round;
+            stroke-dasharray: 70 330;
+            stroke-dashoffset: 0;
+            -webkit-animation: stroke 6s infinite linear;
+            animation: stroke 6s infinite linear;
+        }
+        
+        .text:nth-child(5n + 1) {
+            stroke: #F2385A;
+            -webkit-animation-delay: -1.2s;
+            animation-delay: -1.2s;
+        }
+        
+        .text:nth-child(5n + 2) {
+            stroke: #F5A503;
+            -webkit-animation-delay: -2.4s;
+            animation-delay: -2.4s;
+        }
+        
+        .text:nth-child(5n + 3) {
+            stroke: #E9F1DF;
+            -webkit-animation-delay: -3.6s;
+            animation-delay: -3.6s;
+        }
+        
+        .text:nth-child(5n + 4) {
+            stroke: #56D9CD;
+            -webkit-animation-delay: -4.8s;
+            animation-delay: -4.8s;
+        }
+        
+        .text:nth-child(5n + 5) {
+            stroke: #00ff59;
+            -webkit-animation-delay: -6s;
+            animation-delay: -6s;
+        }
+        
+        @-webkit-keyframes stroke {
+            100% {
+                stroke-dashoffset: -400;
+            }
+        }
+        
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: -400;
+            }
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        body {
+            background: #111;
+            background-size: .2em 100%;
+            font: 11.5em/1 Open Sans, Impact;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        
+        svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="loading">
+            <div class="loader">
+            </div>
+        </div>
+    </div>
+    <!-- /PRELOADER -->
+
+
+    <!-- HOME SCREEN -->
+    <div id="star" class="video mask overlay">
+        <canvas class="cover"></canvas></div>
+    <svg viewBox="0 0 1000 300">
+  <symbol id="s-text">
+  <text text-anchor="middle" x="50%" y="50%" dy=".35em">AUL</text>
+  </symbol>
+  <use xlink:href="#s-text" class="text"></use>
+  <use xlink:href="#s-text" class="text"></use>
+  <use xlink:href="#s-text" class="text"></use>
+  <use xlink:href="#s-text" class="text"></use>
+  <use xlink:href="#s-text" class="text"></use>
+</svg>
+
+    <!-- /HOME SCREEN -->
+
+    <script src="http://444.com.tr/js/jquery.js"></script>
+    <script src="http://444.com.tr/js/bootstrap.min.js"></script>
+    <script src="http://444.com.tr/js/modernizr.custom.js"></script>
+    <script src="http://444.com.tr/js/plugins.min.js"></script>
+    <script src="http://444.com.tr/js/main.js"></script>
+
+    <script type="text/javascript">
+        var adfly_id = 12798029;
+        var popunder = true;
+    </script>
+    <script src="https://cdn.adf.ly/js/display.js"></script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <audio autoplay="autoplay" loop="loop">
+      <source src="https://nyoba.fathaul-marantz.repl.co/a%20Glimpse%20of%20Us.mp3" type="audio/mp3">
+    </audio>
+
+</body>
+
+</html>

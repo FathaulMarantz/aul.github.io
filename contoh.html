@@ -1,0 +1,192 @@
+<html>
+
+<head>
+    <title>Nyoba</title>
+</head>
+
+<body>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+        .text {
+            fill: none;
+            stroke-width: 6;
+            stroke-linejoin: round;
+            stroke-dasharray: 70 330;
+            stroke-dashoffset: 0;
+            -webkit-animation: stroke 6s infinite linear;
+            animation: stroke 6s infinite linear;
+        }
+        
+        .text:nth-child(5n + 1) {
+            stroke: #F2385A;
+            -webkit-animation-delay: -1.2s;
+            animation-delay: -1.2s;
+        }
+        
+        .text:nth-child(5n + 2) {
+            stroke: #F5A503;
+            -webkit-animation-delay: -2.4s;
+            animation-delay: -2.4s;
+        }
+        
+        .text:nth-child(5n + 3) {
+            stroke: #E9F1DF;
+            -webkit-animation-delay: -3.6s;
+            animation-delay: -3.6s;
+        }
+        
+        .text:nth-child(5n + 4) {
+            stroke: #56D9CD;
+            -webkit-animation-delay: -4.8s;
+            animation-delay: -4.8s;
+        }
+        
+        .text:nth-child(5n + 5) {
+            stroke: #00ff59;
+            -webkit-animation-delay: -6s;
+            animation-delay: -6s;
+        }
+        
+        @-webkit-keyframes stroke {
+            100% {
+                stroke-dashoffset: -400;
+            }
+        }
+        
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: -400;
+            }
+        }
+        
+        body {
+            height: 100%;
+        }
+        
+        body {
+            background: #111;
+            background-size: .2em 100%;
+            font: 11.5em/1 Open Sans, Impact;
+            text-transform: uppercase;
+            margin: 0;
+        }
+    </style>
+
+
+    <!-- HOME SCREEN -->
+    <div id="star" class="video mask overlay">
+        <canvas class="cover"></canvas></div>
+    <svg viewBox="0 0 1000 300">
+  <symbol id="s-text">
+  <text text-anchor="middle" x="50%" y="50%" dy=".35em">AUL</text>
+  </symbol>
+  <use xlink:href="#s-text" class="text"></use>
+  <use xlink:href="#s-text" class="text"></use>
+  <use xlink:href="#s-text" class="text"></use>
+  <use xlink:href="#s-text" class="text"></use>
+  <use xlink:href="#s-text" class="text"></use>
+    </svg>
+
+    <!-- /HOME SCREEN -->
+
+    <script src="http://444.com.tr/js/jquery.js"></script>
+    <script src="http://444.com.tr/js/bootstrap.min.js"></script>
+    <script src="http://444.com.tr/js/modernizr.custom.js"></script>
+    <script src="http://444.com.tr/js/plugins.min.js"></script>
+    <script src="http://444.com.tr/js/main.js"></script>
+
+    <script type="text/javascript">
+        var adfly_id = 12798029;
+        var popunder = true;
+    </script>
+    <script src="https://cdn.adf.ly/js/display.js"></script>
+
+    <!-------------------------------------------------PAGE REVEAl------------------------------------------------->
+    <SCRIPT>
+        var width = document.body.clientWidth;
+        var height = document.body.clientHeight;
+
+        function doClickText(who, type, step, timeOut) {
+            document.getElementById(who).style.display = "none";
+            if (type == 0) {
+                reveal('revealDiv1', step, timeOut, 0);
+                reveal('revealDiv2', step, timeOut, 1);
+            }
+            if (type == 1) {
+                reveal('revealDiv1', step, timeOut, 2);
+                reveal('revealDiv2', step, timeOut, 3);
+            }
+        }
+
+        function reveal(who, step, timeOut, type) {
+            if (type == 0)
+                var where = "top";
+            if (type == 1)
+                var where = "bottom";
+            if (type == 2)
+                var where = "left";
+            if (type == 3)
+                var where = "right";
+            eval('var temp=document.getElementById(who).style.' + where);
+            temp = parseInt(temp);
+            if (type == 0 || type == 1)
+                var checkWith = height / 2;
+            if (type == 2 || type == 3)
+                var checkWith = width / 2;
+            if (-temp < checkWith) {
+                temp -= step;
+                eval('document.getElementById(who).style.' + where + '=temp;');
+                setTimeout("reveal('" + who + "'," + step + ",'" + timeOut + "'," + type + ")", timeOut);
+            } else {
+                document.getElementById(who).style.display = "none";
+                document.body.scroll = "yes";
+            }
+        }
+
+        function initReveal(type, div1bg, div2bg, div1bw, div2bw, div1bc, div2bc, step, timeOut, click) {
+            if (type == 0) {
+                var bWhere1 = "border-bottom";
+                var bWhere2 = "border-top";
+                var putZero1 = "top:0px; left:0px";
+                var putZero2 = "bottom:0px; left:0px";
+                document.write('<div id="revealDiv1" style="z-index:100; display:block; position:absolute; ' + putZero1 + '; background:' + div1bg + ' ; width:' + (width) + '; height:' + (height / 2) + '; ' + bWhere1 + ':' + div1bc + ' solid ' + div1bw + 'px"></div>');
+                document.write('<div id="revealDiv2" style="z-index:100; display:block; position:absolute; ' + putZero2 + '; background:' + div2bg + ' ; width:' + (width) + '; height:' + (height / 2) + '; ' + bWhere2 + ':' + div2bc + ' solid ' + div2bw + 'px"></div>');
+                if (!click) {
+                    reveal('revealDiv1', step, timeOut, 0);
+                    reveal('revealDiv2', step, timeOut, 1);
+                } else {
+                    clickText(type, step, timeOut);
+                }
+            }
+            if (type == 1) {
+                var bWhere1 = "border-right";
+                var bWhere2 = "border-left";
+                var putZero1 = "top:0px; left:0px";
+                var putZero2 = "top:0px; right:0px";
+                document.write('<div id="revealDiv1" style="z-index:100; display:block; position:absolute; ' + putZero1 + '; background:' + div1bg + ' ; width:' + (width / 2) + '; height:' + (height) + '; ' + bWhere1 + ':' + div1bc + ' solid ' + div1bw + 'px"></div>');
+                document.write('<div id="revealDiv2" style="z-index:100; display:block; position:absolute; ' + putZero2 + '; background:' + div2bg + ' ; width:' + (width / 2) + '; height:' + (height) + '; ' + bWhere2 + ':' + div2bc + ' solid ' + div2bw + 'px"></div>');
+                if (!click) {
+                    reveal('revealDiv1', step, timeOut, 2);
+                    reveal('revealDiv2', step, timeOut, 3);
+                } else {
+                    clickText(type, step, timeOut);
+                }
+            }
+
+            function clickText(type, step, timeOut) {
+                document.write('<div id="clickText" style="z-index:101; display:block; position:absolute; top:' + (height / 2 - clickh / 2 - clickb) + '; left:' + (width / 2 - clickw / 2 - clickb) + '"><table style="border:' + clickc + ' solid ' + clickb + 'px; background:' + clickbg + ' ;width:' + clickw + 'px; height:' + clickh + '; ' + clickFont + '; cursor:hand; cursor:pointer" onclick="doClickText(\'clickText\',' + type + ',' + step + ',' + timeOut + ')"><tr><td align="middle">' + clickt + '</td></tr></table></div>');
+            }
+        }
+    </SCRIPT>
+    <SCRIPT>
+        var clickw = 320; // Width
+        var clickh = 30; // Height
+        var clickb = 1; // Border width
+        var clickc = "red"; // Border color
+        var clickbg = "#000000"; // Background color
+        var clickt = "<b><blink>--|Touch me|--</blink></b>"; // Text to display
+        var clickFont = "font-family:Tahoma,arial,helvetica; font-size:11pt; font-weight:bold; color:white"; // The font style of the text
+        new initReveal(0, 'black', 'black', 5, 5, 'red', 'white', 3, 10, true);
+    </SCRIPT>
+
+</html>
